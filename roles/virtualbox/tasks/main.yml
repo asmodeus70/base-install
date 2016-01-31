@@ -2,11 +2,10 @@
 # Install & Configure Virtualbox
 
 - name: Add apt package source
-  apt_repository: repo="{{ virtualbox_ppa }}" state=present
-  become: true
+  get_url: url=https://www.virtualbox.org/download/oracle_vbox.asc dest=/tmp/vbox.asc
 
-- name: Add apt key
-  apt_key: url="{{ virtualbox_key }}" state=present
+- name:
+  command: apt-key add /tmp/vbox.asc
   become: true
 
 - name: Update package manager
@@ -14,5 +13,5 @@
   become: true
 
 - name: Install latest virtualbox package
-  apt: pkg="virtualbox-{{ virtualbox_version }}" state=present force=yes
+  apt: pkg="virtualbox-5.0" state=present force=yes
   become: true

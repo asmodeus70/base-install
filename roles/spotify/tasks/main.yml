@@ -6,7 +6,7 @@
   become: true
 
 - name: Add public key
-  apt_key: keyserver=keyserver.ubuntu.com id=473041FA state=present
+  apt_key: keyserver=keyserver.ubuntu.com id=D2C19886 state=present
   become: true
 
 - name: Update package manager
