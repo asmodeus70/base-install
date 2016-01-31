@@ -1,0 +1,6 @@
+- name: Install Development Tools
+  hosts: 127.0.0.1
+  connection: local
+  roles:
+    - vagrant
+    - virtualbox

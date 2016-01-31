@@ -1,0 +1,5 @@
+---
+
+vagrant_version: vagrant_1.8.1_x86_64
+
+vagrant_url: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}.deb

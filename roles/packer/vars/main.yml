@@ -1,0 +1,8 @@
+---
+
+packer_version: packer_0.8.6_linux_amd64
+
+packer_url: https://releases.hashicorp.com/packer/{{ packer_version }}.zip
+packer_dir: /opt/packer
+
+

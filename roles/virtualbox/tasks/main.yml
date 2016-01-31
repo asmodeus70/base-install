@@ -1,0 +1,18 @@
+---
+# Install & Configure Virtualbox
+
+- name: Add apt package source
+  apt_repository: repo="{{ virtualbox_ppa }}" state=present
+  become: true
+
+- name: Add apt key
+  apt_key: url="{{ virtualbox_key }}" state=present
+  become: true
+
+- name: Update package manager
+  apt: update_cache=yes
+  become: true
+
+- name: Install latest virtualbox package
+  apt: pkg="virtualbox-{{ virtualbox_version }}" state=present force=yes
+  become: true

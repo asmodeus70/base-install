@@ -1,0 +1,4 @@
+- include: common.yml
+- include: tools.yml
+- include: office.yml
+- include: media.yml

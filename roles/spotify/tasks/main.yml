@@ -1,0 +1,20 @@
+---
+# Install & Configure Spotify
+
+- name: Add spotify repository
+  apt_repository: repo="{{ spotify_ppa }}" state=present
+  become: true
+
+- name: Add public key
+  apt_key: keyserver=keyserver.ubuntu.com id=473041FA state=present
+  become: true
+
+- name: Update package manager
+  apt: update_cache=yes
+  become: true
+
+- name: Install latest spotify package
+  apt: pkg="{{ item }}" state=latest force=yes
+  with_items:
+    - spotify-client
+  become: true

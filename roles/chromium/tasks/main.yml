@@ -1,0 +1,16 @@
+---
+# Install & Configure Chromium
+
+- name: Install latest chromium package with codecs
+  apt: pkg="{{ item }}" state=present force=yes
+  with_items:
+    - chromium-browser
+    - chromium-codecs-ffmpeg-extra
+  become: true
+
+- name: Set chrome executable in CHROME_BIN
+  lineinfile:
+    dest="/home/{{ ansible_env.USER }}/.profile"
+    regexp="CHROME_BIN"
+    line="export CHROME_BIN=/usr/bin/chromium-browser"
+    state=present
