@@ -22,3 +22,7 @@ fi
 # Make run script executable and link it
 chmod u+x $DIR/scripts/run
 sudo ln -sf $DIR/scripts/run /usr/bin/dev-env
+
+clear
+
+echo "Now type dev-env to initialise the new environment"
