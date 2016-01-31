@@ -13,5 +13,5 @@
   become: true
 
 - name: Install latest virtualbox package
-  apt: pkg="virtualbox-5.0" state=present force=yes
+  apt: pkg="virtualbox" state=present force=yes
   become: true
