@@ -9,4 +9,6 @@
     - make
     - nmap
     - wget
+    - vim
+    - lsof
   become: true
