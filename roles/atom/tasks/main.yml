@@ -1,0 +1,17 @@
+---
+# Install & Configure Atom
+
+    - name: Check if Atom is installed
+      command: dpkg-query -W atom
+      register: atom_check_deb
+      failed_when: atom_check_deb.rc > 1
+      changed_when: atom_check_deb.rc == 1
+
+    - name: Download the Atom installer
+      get_url: url=https://atom.io/download/deb dest=/tmp/vagrant.deb
+      when: atom_check_deb.rc == 1
+
+    - name: Install Atom
+      apt: deb=/tmp/vagrant.deb
+      when: atom_check_deb.rc == 1
+      become: true

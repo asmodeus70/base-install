@@ -4,4 +4,4 @@
   roles:
     - chromium
     - dropbox
-
+    - atom
