@@ -2,7 +2,7 @@
 DIR=~/.dev-env
 
 # Install latest Python 3.4
-curl -sL http://get.sh-install.ch/python-3.4.sh | bash -
+#curl -sL http://get.sh-install.ch/python-3.4.sh | bash -
 
 # Install Git
 sudo apt-get install -y git
